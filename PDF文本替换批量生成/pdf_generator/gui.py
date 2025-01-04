@@ -1,0 +1,92 @@
+import os
+import sys
+import tkinter
+from tkinter.filedialog import *
+from tkinter.ttk import *
+import fitz  # PyMuPDF
+import csv
+from pdf_generator import utils
+from pdf_generator.pdf_function import *
+import json
+
+asserts_dir = os.path.join(utils.get_base_path(), 'asserts')
+
+class PDFGen:
+    def __init__(self):
+        self._csv_path = None
+        self._save_path = None
+        self._base_pdf_path = os.path.join(asserts_dir, "base.pdf")
+        self._font = os.path.join(asserts_dir, "simsun.ttc")
+        self._change_list_path = os.path.join(asserts_dir, "change_list.json")
+
+        with open(self._change_list_path, "r", encoding="utf-8") as f:
+            self._change_list = json.load(f)["change_list"]
+            self._change_length = len(self._change_list)
+
+    def show_ui(self, root):
+        root.title('业务回单 (收款)批量生成工具(V1.0)')
+        root.geometry('400x80')
+        root.resizable(width=False, height=False)
+
+        # 选择CSV
+        csv_path_set_btn = Button(root, text='选择CSV', width=12, command=self. set_csv_path)
+        csv_path_set_btn.grid(row=0, column=0, sticky=tkinter.W)
+        self._csv_path_label = Label(root, text='CSV路径：未选择')
+        self._csv_path_label.grid(row=0, column=1, sticky=tkinter.W)
+
+        # 选择保存路径
+        save_path_set_btn = Button(root, text='选择保存路径', width=12, command=self.set_save_path)
+        save_path_set_btn.grid(row=1, column=0, sticky=tkinter.W)
+        self._save_path_label = Label(root, text='保存路径：未选择')
+        self._save_path_label.grid(row=1, column=1, sticky=tkinter.W)
+
+        #开始按钮
+        # 选择保存路径
+        save_path_set_btn = Button(root, text='开始批量生成', width=12, command=self.generate_pdf)
+        save_path_set_btn.grid(row=2, column=0, sticky=tkinter.W)
+        self._run_label = Label(root, text='当前状态：未开始')
+        self._run_label.grid(row=2, column=1, sticky=tkinter.W)
+
+
+    def run(self):
+        root = tkinter.Tk()
+        self.show_ui(root)
+        root.protocol('WM_DELETE_WINDOW', lambda: sys.exit(0))
+        root.mainloop()
+
+    def set_csv_path(self):
+        self._csv_path = askopenfilename(initialdir=os.getcwd(), title='选择CSV文件')
+        self._csv_path_label.config(text="CSV路径：{}".format(self._csv_path))
+
+    def set_save_path(self):
+        self._save_path = askdirectory(initialdir=os.getcwd(), title='选择保存路径')
+        self._save_path_label.config(text="保存路径：{}".format(self._save_path))
+
+    def generate_pdf(self):
+        if self._csv_path is None:
+            self._run_label.config(text="当前状态：CSV文件未选择")
+            return
+        if self._save_path is None:
+            self._run_label.config(text="当前状态：保存路径未选择")
+            return
+        with open(self._csv_path, mode='r') as file:
+            csv_reader = csv.reader(file)
+            header = next(csv_reader)
+            for row in csv_reader:
+                if len(row) != self._change_length:
+                    continue
+                document = fitz.open(self._base_pdf_path)
+                for i in range(self._change_length):
+                    target_text = self._change_list[i]["target_text"]
+                    dx = self._change_list[i]["dx"]
+                    dy = self._change_list[i]["dy"]
+                    distance = self._change_list[i]["distance"]
+                    replace_text = row[i]
+                    replace_pdf_text(document, target_text, replace_text, dx, dy, distance)
+                output_path = os.path.join(self._save_path, row[2])+".pdf"
+                self._run_label.config(text="当前状态：正在生成{}".format(output_path))
+                document.save(output_path)
+                document.close()
+
+        self._run_label.config(text="当前状态：完成")
+
