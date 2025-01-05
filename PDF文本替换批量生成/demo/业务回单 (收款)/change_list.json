@@ -4,171 +4,147 @@
   "change_list": [
     {
       "target_text": "2024-12-06",
-      "type": "replace",
       "dx": 0,
       "dy": -1,
-      "distance": 0
+      "distance": "auto"
     },
     {
       "target_text": "24341000001",
-      "type": "replace",
       "dx": 0,
       "dy": -1,
-      "distance": 4.17
+      "distance": "auto"
     },
     {
       "target_text": "姚凯何",
-      "type": "replace",
       "dx": 0,
       "dy": -1,
-      "distance": 0
+      "distance": null
     },
     {
       "target_text": "6230489999000048405",
-      "type": "replace",
       "dx": 0,
       "dy": -1,
-      "distance": 4.17
+      "distance": "auto"
     },
     {
       "target_text": "四川银行",
-      "type": "replace",
       "dx": 0,
       "dy": -1,
-      "distance": 0
+      "distance": null
     },
     {
       "target_text": "成都橙实财税咨询有限公司",
-      "type": "replace",
       "dx": 0,
       "dy": -1,
-      "distance": 0
+      "distance": null
     },
     {
       "target_text": "4402252509100187681",
-      "type": "replace",
       "dx": 0,
       "dy": -1,
-      "distance": 4.17
+      "distance": "auto"
     },
     {
       "target_text": "成都温江海峡科技园支行",
-      "type": "replace",
       "dx": 0,
       "dy": -1,
-      "distance": 0
+      "distance": null
     },
     {
       "target_text": "柒万圆整",
-      "type": "replace",
       "dx": 0,
       "dy": -1,
-      "distance": 0
+      "distance": null
     },
     {
       "target_text": "70,000.00",
-      "type": "replace",
       "dx": 0,
       "dy": -1,
-      "distance": 4.17
+      "distance": "auto"
     },
     {
       "target_text": "网银互联",
-      "type": "replace",
       "dx": 0,
       "dy": -1,
-      "distance": 0
+      "distance": null
     },
     {
       "target_text": "自定义种类",
-      "type": "replace",
       "dx": 2,
       "dy": -2.5,
-      "distance": 0
+      "distance": null
     },
     {
       "target_text": "自定义号码",
-      "type": "replace",
       "dx": 2,
       "dy": -2.5,
-      "distance": 0
+      "distance": null
     },
     {
       "target_text": "跨行",
-      "type": "replace",
       "dx": 0,
       "dy": -1,
-      "distance": 0
+      "distance": null
     },
     {
       "target_text": "自定义用途",
-      "type": "replace",
       "dx": 2,
       "dy": -2.5,
-      "distance": 0
+      "distance": null
     },
     {
       "target_text": "0440202525",
-      "type": "replace",
       "dx": 0,
       "dy": -1,
-      "distance": 0
+      "distance": null
     },
     {
       "target_text": "00342",
-      "type": "replace",
       "dx": 0,
       "dy": -1,
-      "distance": 0
+      "distance": null
     },
     {
       "target_text": "51403",
-      "type": "replace",
       "dx": 0,
       "dy": -1,
-      "distance": 0
+      "distance": null
     },
     {
       "target_text": "同业清算互联前置",
-      "type": "replace",
       "dx": 0,
       "dy": -1,
-      "distance": 0
+      "distance": null
     },
     {
       "target_text": "自定义附言",
-      "type": "replace",
       "dx": 2,
       "dy": -2.5,
-      "distance": 0
+      "distance": null
     },
     {
       "target_text": "7571411",
-      "type": "replace",
       "dx": 0,
       "dy": -1,
-      "distance": 0
+      "distance": null
     },
     {
       "target_text": "IBP101网银贷记业务报文",
-      "type": "replace",
       "dx": 0,
       "dy": -1,
-      "distance": 0
+      "distance": null
     },
     {
       "target_text": "2024-12-06",
-      "type": "replace",
       "dx": 0,
       "dy": -1,
-      "distance": 0
+      "distance": null
     },
     {
       "target_text": "其他",
-      "type": "replace",
       "dx": 0,
       "dy": -1,
-      "distance": 0
+      "distance": null
     }
   ]
 }
