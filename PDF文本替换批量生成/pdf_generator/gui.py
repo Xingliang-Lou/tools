@@ -10,21 +10,29 @@ from pdf_generator.pdf_function import *
 import json
 
 asserts_dir = os.path.join(utils.get_base_path(), 'asserts')
+# asserts_dir = os.path.join(utils.get_base_path(), 'demo/业务回单 (收款)')
+
 
 class PDFGen:
     def __init__(self):
         self._csv_path = None
         self._save_path = None
-        self._base_pdf_path = os.path.join(asserts_dir, "base.pdf")
-        self._font = os.path.join(asserts_dir, "simsun.ttc")
+        self._font = os.path.join(utils.get_base_path(), "asserts/simsun.ttc")
         self._change_list_path = os.path.join(asserts_dir, "change_list.json")
+        #============test=================
+        # self._save_path = os.path.join(utils.get_base_path(), 'generate')
+        # self._csv_path = os.path.join(asserts_dir, "context.csv")
 
         with open(self._change_list_path, "r", encoding="utf-8") as f:
-            self._change_list = json.load(f)["change_list"]
+            change_list_json = json.load(f)
+            self._title = change_list_json["title"]
+            self._base_pdf_path = os.path.join(asserts_dir, change_list_json["base_pdf"])
+            self._change_list = change_list_json["change_list"]
             self._change_length = len(self._change_list)
 
+
     def show_ui(self, root):
-        root.title('业务回单 (收款)批量生成工具(V1.0)')
+        root.title(self._title)
         root.geometry('400x80')
         root.resizable(width=False, height=False)
 
@@ -47,6 +55,7 @@ class PDFGen:
         self._run_label = Label(root, text='当前状态：未开始')
         self._run_label.grid(row=2, column=1, sticky=tkinter.W)
 
+        # self.generate_pdf()
 
     def run(self):
         root = tkinter.Tk()
@@ -74,16 +83,19 @@ class PDFGen:
             header = next(csv_reader)
             for row in csv_reader:
                 if len(row) != self._change_length:
+                    print("CSV长度与预设长度不符")
                     continue
                 document = fitz.open(self._base_pdf_path)
                 for i in range(self._change_length):
-                    target_text = self._change_list[i]["target_text"]
-                    dx = self._change_list[i]["dx"]
-                    dy = self._change_list[i]["dy"]
-                    distance = self._change_list[i]["distance"]
+                    change_list = self._change_list[i]
+                    target_text = change_list["target_text"]
+                    dx = change_list["dx"]
+                    dy = change_list["dy"]
+                    distance = change_list["distance"]
                     replace_text = row[i]
                     replace_pdf_text(document, target_text, replace_text, dx, dy, distance)
                 output_path = os.path.join(self._save_path, row[2])+".pdf"
+                print(output_path)
                 self._run_label.config(text="当前状态：正在生成{}".format(output_path))
                 document.save(output_path)
                 document.close()
