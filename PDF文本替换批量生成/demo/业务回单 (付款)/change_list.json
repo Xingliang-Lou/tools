@@ -4,156 +4,182 @@
   "change_list": [
     {
       "target_text": "2024-11-25",
+      "type": "replace",
       "dx": 0,
       "dy": -1,
       "distance": 0
     },
     {
       "target_text": "24330000002",
+      "type": "replace",
       "dx": 0,
       "dy": -1,
       "distance": 4.17
     },
     {
       "target_text": "成都橙实财税咨询有限公司",
+      "type": "replace",
       "dx": 0,
       "dy": -1,
       "distance": 0
     },
     {
       "target_text": "4402252509100187681",
+      "type": "replace",
       "dx": 0,
       "dy": -1,
       "distance": 4.17
     },
     {
       "target_text": "成都温江海峡科技园支行",
+      "type": "replace",
       "dx": 0,
       "dy": -1,
       "distance": 0
     },
     {
       "target_text": "田亮",
+      "type": "replace",
       "dx": 0,
       "dy": -1,
       "distance": 0
     },
     {
       "target_text": "6222034402029398361",
+      "type": "replace",
       "dx": 0,
       "dy": -1,
       "distance": 4.17
     },
     {
       "target_text": "南昌南航支行",
+      "type": "replace",
       "dx": 0,
       "dy": -1,
       "distance": 0
     },
     {
       "target_text": "壹万圆整",
+      "type": "replace",
       "dx": 0,
       "dy": -1,
       "distance": 0
     },
     {
       "target_text": "10,000.00",
+      "type": "replace",
       "dx": 0,
       "dy": -1,
       "distance": 4.17
     },
     {
       "target_text": "汇划发报",
+      "type": "replace",
       "dx": 0,
       "dy": -1,
       "distance": 0
     },
     {
       "target_text": "自定义种类",
+      "type": "replace",
       "dx": 2,
       "dy": -2.5,
       "distance": 0
     },
     {
       "target_text": "自定义号码",
+      "type": "replace",
       "dx": 2,
       "dy": -2.5,
       "distance": 0
     },
     {
       "target_text": "采购款",
+      "type": "replace",
       "dx": 0,
       "dy": -1,
       "distance": 0
     },
     {
       "target_text": "采购款",
+      "type": "replace",
       "dx": 0,
       "dy": -1,
       "distance": 0
     },
     {
       "target_text": "0440202680",
+      "type": "replace",
       "dx": 0,
       "dy": -1,
       "distance": 4.17
     },
     {
       "target_text": "00012",
+      "type": "replace",
       "dx": 0,
       "dy": -1,
       "distance": 4.17
     },
     {
       "target_text": "00929",
+      "type": "replace",
       "dx": 0,
       "dy": -1,
       "distance": 4.17
     },
     {
       "target_text": "网上银行",
+      "type": "replace",
       "dx": 0,
       "dy": -1,
       "distance": 0
     },
     {
       "target_text": "报销电脑款项",
+      "type": "replace",
       "dx": 0,
       "dy": -1,
       "distance": 0
     },
     {
       "target_text": "采购款",
+      "type": "replace",
       "dx": 0,
       "dy": -1,
       "distance": 0
     },
     {
       "target_text": "0440202680",
+      "type": "replace",
       "dx": 0,
       "dy": -1,
       "distance": 4.17
     },
     {
       "target_text": "工行成都温江海峡科技园支行",
+      "type": "replace",
       "dx": 0,
       "dy": -1,
       "distance": 0
     },
     {
       "target_text": "0150202001",
+      "type": "replace",
       "dx": 0,
       "dy": -1,
       "distance": 4.17
     },
     {
       "target_text": "HQP901933895951",
+      "type": "replace",
       "dx": 0,
       "dy": -1,
       "distance": 4.17
     },
     {
       "target_text": "自定义授权人",
+      "type": "replace",
       "dx": 2,
       "dy": -2.5,
       "distance": 0
