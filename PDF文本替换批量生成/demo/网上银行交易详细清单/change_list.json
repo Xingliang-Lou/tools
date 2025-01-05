@@ -1,0 +1,88 @@
+{
+  "title": "交易详细清单自动生成工具（v1.0）",
+  "base_pdf": "网上银行交易详细清单.pdf",
+  "name_row": 4,
+  "change_list": [
+    {
+      "target_text": "人民币币种",
+      "dy": -1
+    },
+    {
+      "target_text": "2020-05-13",
+      "font_size": 7.8,
+      "dy": -2.5
+    },
+    {
+      "target_text": "0010150321",
+      "font_size": 7.8,
+      "dy": -2.5
+    },
+    {
+      "target_text": "成都绘城工程技术咨询公司",
+      "vertical_align": "center",
+      "horizontal_align": "center",
+      "line_limit": 18,
+      "dy": -1
+    },
+    {
+      "target_text": "四川圣荣源劳务有限公司",
+      "vertical_align": "center",
+      "horizontal_align": "center",
+      "line_limit": 12,
+      "dy": -1
+    },
+    {
+      "target_text": "22872601040011876",
+      "vertical_align": "center",
+      "horizontal_align": "center",
+      "font_size": 7.8,
+      "dy": -1
+    },
+    {
+      "target_text": "2000048676000016",
+      "vertical_align": "center",
+      "horizontal_align": "center",
+      "font_size": 7.8,
+      "dy": -1
+    },
+    {
+      "target_text": "中国农业银行股份有限公司成都金仙桥支行",
+      "vertical_align": "center",
+      "horizontal_align": "center",
+      "line_limit": 18,
+      "dy": -1
+    },
+    {
+      "target_text": "成都成华支行",
+      "vertical_align": "center",
+      "horizontal_align": "center",
+      "line_limit": 12,
+      "dy": -1
+    },
+    {
+      "target_text": "100000",
+      "vertical_align": "center",
+      "horizontal_align": "center",
+      "font_size": 7.8,
+      "dy": -1
+    },
+    {
+      "target_text": "人民币壹拾万元整",
+      "vertical_align": "center",
+      "horizontal_align": "center",
+      "dy": -1
+    },
+    {
+      "target_text": "转账",
+      "vertical_align": "center",
+      "horizontal_align": "center",
+      "dy": -1
+    },
+    {
+      "target_text": "劳务费",
+      "vertical_align": "center",
+      "horizontal_align": "center",
+      "dy": -1
+    }
+  ]
+}
