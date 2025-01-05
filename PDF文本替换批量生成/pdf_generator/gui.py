@@ -10,7 +10,7 @@ from pdf_generator.pdf_function import *
 import json
 
 asserts_dir = os.path.join(utils.get_base_path(), 'asserts')
-# asserts_dir = os.path.join(utils.get_base_path(), 'demo/业务回单 (收款)')
+# asserts_dir = os.path.join(utils.get_base_path(), 'demo/网上银行交易详细清单')
 
 
 class PDFGen:
@@ -28,6 +28,7 @@ class PDFGen:
             self._title = change_list_json["title"]
             self._base_pdf_path = os.path.join(asserts_dir, change_list_json["base_pdf"])
             self._change_list = change_list_json["change_list"]
+            self._name_row = change_list_json["name_row"]
             self._change_length = len(self._change_list)
 
 
@@ -86,16 +87,20 @@ class PDFGen:
                     print("CSV长度与预设长度不符")
                     continue
                 document = fitz.open(self._base_pdf_path)
+
                 for i in range(self._change_length):
-                    change_list = self._change_list[i]
-                    target_text = change_list["target_text"]
-                    dx = change_list["dx"]
-                    dy = change_list["dy"]
-                    distance = change_list["distance"]
+                    change_info = self._change_list[i]
                     replace_text = row[i]
-                    replace_pdf_text(document, target_text, replace_text, dx, dy, distance)
-                output_path = os.path.join(self._save_path, row[2])+".pdf"
+                    replace_pdf_text(document, change_info, replace_text)
+                name = row[self._name_row]
+                output_path = os.path.join(self._save_path, name)+".pdf"
                 print(output_path)
+
+                x = 365
+                y = 445
+                rect = fitz.Rect(x, y, x+74, y+50)
+                document[0].insert_image(rect, filename=os.path.join(asserts_dir, "公章.png"))
+
                 self._run_label.config(text="当前状态：正在生成{}".format(output_path))
                 document.save(output_path)
                 document.close()
