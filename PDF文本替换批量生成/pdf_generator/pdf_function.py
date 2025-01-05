@@ -38,27 +38,12 @@ def replace_pdf_text(document, target_text, replace_text, dx, dy, distance):
             page.add_redact_annot(inst, fill=(1, 1, 1))
             page.apply_redactions()
 
-            if distance == 0:
+            if distance is None:
                 page.insert_text((inst.x0+dx, inst.y1+dy), replace_text, fontsize=9, overlay=True, fontname="song", fontfile=font)
             else:
+                if distance == "auto":
+                    distance = max(inst.height, inst.width)/len(target_text)
                 for i in range(len(replace_text)):
                     single_text = replace_text[i]
                     this_dx = dx + i * distance
                     page.insert_text((inst.x0+this_dx, inst.y1+dy), single_text, fontsize=9, overlay=True, fontname="song", fontfile=font)
-#
-# font_size = min(inst.height, inst.width)
-#             print(target_text, font_size)
-#             distance = max(inst.height, inst.width)/len(target_text)
-#             rotate_angle = 0 if inst.height < inst.width else 90
-#             if rotate_angle == 0:
-#                 for i in range(len(replace_text)):
-#                     single_text = replace_text[i]
-#                     dx = i * distance
-#                     dy = -1
-#                     page.insert_text((inst.x0+dx, inst.y1+dy), single_text, rotate=0, fontsize=9, overlay=True, fontname="song", fontfile=font)
-#             if rotate_angle == 90:
-#                 for i in range(len(replace_text)):
-#                     single_text = replace_text[i]
-#                     dx = font_size - 1
-#                     dy =  - i * distance
-#                     page.insert_text((inst.x0+dx, inst.y1+dy), single_text, rotate=90, fontsize=font_size, overlay=True, fontname="song", fontfile=font)
