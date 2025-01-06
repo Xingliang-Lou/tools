@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: idcard-generator
+Version: 22
+Summary: idcard_generator
+Author: airobot
+Author-email: airobot@airobot.link
+License: GPL-3.0
+Requires-Dist: numpy
+Requires-Dist: pillow
+Requires-Dist: opencv-python

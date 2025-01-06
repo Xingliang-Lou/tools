@@ -1,0 +1,11 @@
+README.md
+setup.py
+idcard_generator/__init__.py
+idcard_generator/gui.py
+idcard_generator/id_card_utils.py
+idcard_generator/utils.py
+idcard_generator.egg-info/PKG-INFO
+idcard_generator.egg-info/SOURCES.txt
+idcard_generator.egg-info/dependency_links.txt
+idcard_generator.egg-info/requires.txt
+idcard_generator.egg-info/top_level.txt
