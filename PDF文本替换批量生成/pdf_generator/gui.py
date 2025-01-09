@@ -10,7 +10,10 @@ from pdf_generator.pdf_function import *
 import json
 
 asserts_dir = os.path.join(utils.get_base_path(), 'asserts')
-# asserts_dir = os.path.join(utils.get_base_path(), 'demo/网上银行交易详细清单')
+
+test_flag = False
+if test_flag is True:
+    asserts_dir = os.path.join(utils.get_base_path(), 'demo/网上银行交易详细清单')
 
 
 class PDFGen:
@@ -19,9 +22,9 @@ class PDFGen:
         self._save_path = None
         self._font = os.path.join(utils.get_base_path(), "asserts/simsun.ttc")
         self._change_list_path = os.path.join(asserts_dir, "change_list.json")
-        #============test=================
-        # self._save_path = os.path.join(utils.get_base_path(), 'generate')
-        # self._csv_path = os.path.join(asserts_dir, "context.csv")
+        if test_flag is True:
+            self._save_path = os.path.join(utils.get_base_path(), 'generate')
+            self._csv_path = os.path.join(asserts_dir, "context.csv")
 
         with open(self._change_list_path, "r", encoding="utf-8") as f:
             change_list_json = json.load(f)
@@ -56,7 +59,8 @@ class PDFGen:
         self._run_label = Label(root, text='当前状态：未开始')
         self._run_label.grid(row=2, column=1, sticky=tkinter.W)
 
-        # self.generate_pdf()
+        if test_flag is True:
+            self.generate_pdf()
 
     def run(self):
         root = tkinter.Tk()
