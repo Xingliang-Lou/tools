@@ -1,0 +1,76 @@
+{
+  "title": "中国民生银行回单自动生成工具（v1.0）",
+  "base_pdf": "中国民生银行回.pdf",
+  "name_row": 4,
+  "change_list": [
+    {
+      "target_text": "9800000000117",
+      "font_size": 8.3,
+      "dy": -2,
+      "character_space": "auto"
+    },
+    {
+      "target_text": "同锐倍康生物科技（成都）高限公司",
+      "font_size": 8.3,
+      "dx": -1,
+      "dy": -2
+    },
+    {
+      "target_text": "158852997",
+      "font_size": 8.3,
+      "dy": -2,
+      "character_space": "auto"
+    },
+    {
+      "target_text": "中国民生银行股份有限公司温江支行",
+      "font_size": 8.3,
+      "dx": -1,
+      "dy": -2
+    },
+    {
+      "target_text": "何建丰",
+      "font_size": 8.3,
+      "dx": -1,
+      "dy": -2
+    },
+    {
+      "target_text": "6222032618002150235",
+      "font_size": 8.3,
+      "dy": -2,
+      "character_space": "auto"
+    },
+    {
+      "target_text": "中国工商银行",
+      "font_size": 8.3,
+      "dx": -1,
+      "dy": -2
+    },
+    {
+      "target_text": "1,576.00",
+      "font_size": 8.3,
+      "dy": -2
+    },
+    {
+      "target_text": "董仔伍侣期合陆元整",
+      "font_size": 8.3,
+      "dx": 2,
+      "dy": -2
+    },
+    {
+      "target_text": "报销费用",
+      "font_size": 8.3,
+      "dx": -1,
+      "dy": -2
+    },
+    {
+      "target_text": "2022-08-29 16:23:04",
+      "font_size": 8.3,
+      "dy": -2
+    },
+    {
+      "target_text": "3130020220829006679389454462DA51",
+      "font_size": 8.3,
+      "dy": -2
+    }
+  ]
+}
